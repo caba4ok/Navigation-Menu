@@ -36,6 +36,7 @@ ul li {
     display: flex;
     justify-content: space-between;
     padding: 0;
+    min-width: 211px;
 }
 
 .menu:first-child {
@@ -84,6 +85,10 @@ ul li {
     padding: 18px 57px;
 }
 
+.second_menu>ul>li:nth-child(3)>.astyle>.submenu li:nth-child(3):hover>ul{
+    display: block;
+}
+
 .third_menu>ul:first-child>li:first-child a {
     position: relative;
     padding-left: 59px;
@@ -101,14 +106,8 @@ ul li {
     transform: translateY(-50%);
 }
 
-.first_menu>ul>li:hover>.submenu {
-    display: block;
-}
-
-.second_menu>ul>li:hover>.submenu {
-    display: block;
-}
-
+.first_menu>ul>li:hover>.submenu,
+.second_menu>ul>li:hover>.submenu,
 .third_menu>ul>li:hover>.submenu {
     display: block;
 }
@@ -116,22 +115,15 @@ ul li {
 .astyle:hover {
     color: #fd8612;
     background-color: #3f4852;
-    border-radius: 3px;
 }
 
 .submenu {
+    z-index: 999;
     display: none;
-    padding-top: 4px;
-}
-
-.submenu a {
-    display: block;
-}
-
-.submenu li {
+    position: absolute;
+    border-radius: 3px;
+    width: 211px;
     background-color: #d2d4d5;
-    padding: 15px 20px;
-    border-radius: 3px 3px 0 0;
 }
 
 .submenu li>a:hover {
@@ -141,6 +133,8 @@ ul li {
 
 
 .submenu a {
+    display: block;
+    padding: 15px 20px;
     font-size: 15px;
     color: #2a3644;
     font-weight: bold;
@@ -156,6 +150,17 @@ ul li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.navigation>li:nth-child(3)>.submenu {
+    display: none;
+    height: 164px;
+    max-width: 421px;
+}
+
+.navigation>li:nth-child(3)>.astyle:hover>.submenu {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .socialicons {
@@ -267,17 +272,62 @@ tbody tr {
     background-color: #c0c1c2;
 }
 
+footer h2 {
+    padding-top: 50px;
+}
+
 .css_table {
     display: table;
 }
-.css_table_thead{
+
+.css_table_thead:first-child>p:first-child,
+.css_table_thead:first-child>p:nth-child(2),
+.css_table_thead:first-child>p:nth-child(3),
+.css_table_thead:first-child>p:nth-child(4),
+.css_table_thead:first-child>p:nth-child(5) {
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #2a3644;
+}
+
+.css_table_thead:first-child>p:first-child,
+.css_table_tbody:first-child>p:first-child {
+    padding: 18px 28px;
+}
+
+.css_table_thead:first-child>p:nth-child(2) {
+    padding: 18px 375px 0 28px;
+}
+
+.css_table_thead:first-child>p:nth-child(3),
+.css_table_thead:first-child>p:nth-child(4),
+.css_table_thead:first-child>p:nth-child(5) {
+    padding: 18px 47px;
+}
+
+.css_table_thead,
+.css_table_tbody {
     display: table-row;
 }
 
-.css_table_tbody{
-    display: table;
+.css_table_tbody p,
+.css_table_thead p {
+    display: table-cell;
 }
 
-.first_row{
-    display: table-cell;
+.css_table_tbody:hover{
+    background-color: #c0c1c2;
+}
+
+.css_table_tbody p:first-child{
+    padding: 17px 28px;
+}
+
+.td_forth_style{
+    padding-left: 25px;
+}
+
+.td_fifth_style{
+    text-align: right;
+    padding-right: 27px;
 }
