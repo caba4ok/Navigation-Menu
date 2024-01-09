@@ -130,10 +130,26 @@ ul li {
     background-color: #d2d4d5;
 }
 
+.submenu li+li{
+    border-top: 1px solid #b9bdc1;
+}
+
 .submenu li>a:hover,
 .double_menu li>a:hover {
     background-color: #2a3644;
     color: #ff8505;
+}
+
+.double_menu li+li+li+li+li {
+    border-left: 1px solid #b9bdc1;
+}
+
+.double_menu li+li+li {
+    border-right: 1px solid #b9bdc1;
+}
+
+.double_menu li{
+    border-bottom: 1px solid #b9bdc1;
 }
 
 
@@ -152,6 +168,10 @@ ul li {
     background-color: #e8e8e8;
 }
 
+.hex_color {
+    background-color: #f2f2f2;
+}
+
 .third_menu {
     display: flex;
     justify-content: space-between;
@@ -159,10 +179,15 @@ ul li {
 }
 
 .double_menu {
-    display: flex;
-    flex-wrap: wrap;
+    display: none;
     max-height: 200px;
     width: 421px;
+}
+
+.menu>li:hover>.double_menu {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .socialicons {
@@ -283,11 +308,7 @@ footer h2 {
     width: 100%;
 }
 
-.css_table_thead:first-child>p:first-child,
-.css_table_thead:first-child>p:nth-child(2),
-.css_table_thead:first-child>p:nth-child(3),
-.css_table_thead:first-child>p:nth-child(4),
-.css_table_thead:first-child>p:nth-child(5) {
+.css_table_thead p {
     color: #ffffff;
     font-weight: bold;
     background-color: #2a3644;
@@ -300,13 +321,14 @@ footer h2 {
 
 .css_table_thead:first-child>p:nth-child(2) {
     padding: 18px 0 0 28px;
-    width: 375px;
+    min-width: 375px;
 }
 
 .css_table_thead:first-child>p:nth-child(3),
 .css_table_thead:first-child>p:nth-child(4),
 .css_table_thead:first-child>p:nth-child(5) {
     padding: 18px 47px;
+    text-align: center;
 }
 
 .css_table_thead,
