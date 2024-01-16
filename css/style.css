@@ -57,12 +57,23 @@ ul li {
     text-decoration: none;
 }
 
+li:hover>a{
+    color: #fd8612;
+    background-color: #3f4852;
+}
+
 .first_menu>ul>li:first-child {
     border-right: 1px solid #3f4852;
 }
 
+.first_menu>ul>li:first-child:hover>a,
+.second_menu>ul>li:first-child:hover>a,
+.third_menu>ul:first-child>li:first-child:hover>a{
+    border-radius: 3px 0 0 3px;
+}
+
 .first_menu>ul>li:nth-child(4)>ul {
-    right: 18.2%;
+    right: 0;
 }
 
 .first_menu>ul>li:nth-child(2),
@@ -73,12 +84,12 @@ ul li {
 
 .first_menu>ul>li:last-child {
     border-left: 1px solid #3f4852;
+    position: relative;
 }
 
 .second_menu {
     display: table;
-    width: 100%;
-
+    width: 100%
 }
 
 .second_menu>ul>li+li,
@@ -86,7 +97,7 @@ ul li {
     border-left: 1px solid #3f4852;
 }
 
-.second_menu a {
+.second_menu>ul>li>a {
     padding: 18px 40px;
 }
 
@@ -94,24 +105,39 @@ ul li {
     padding: 18px 57px;
 }
 
-.nd_menu{
+.nd_menu {
     left: 100%;
     top: 50%;
+    padding-left: 5px;
 }
 
-.nd_menu::before{
+ul.nd_menu::before {
     content: "";
     position: absolute;
-    top: 100%;
-    width: 100%;
-    left: -100px;
-    height: -5px;
+    top: 0;
+    width: 5px;
+    left: 0;
+    height: 100%;
     background-color: transparent;
 }
 
-.rd_menu{
+.rd_menu {
     right: 100%;
     top: 75%;
+}
+
+ul.rd_menu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 5px;
+    right: -5px;
+    height: 100%;
+    background-color: transparent;
+}
+
+.nd_menu li:last-child:hover>a{
+    border-radius: 0 0 3px 3px;
 }
 
 .st_menu>li:hover>.nd_menu,
@@ -142,11 +168,6 @@ ul li {
     display: block;
 }
 
-.astyle:hover {
-    color: #fd8612;
-    background-color: #3f4852;
-}
-
 .submenu {
     padding-top: 5px;
     z-index: 2;
@@ -155,23 +176,23 @@ ul li {
     width: 211px;
 }
 
-.hover:hover{
+.hover:hover {
     border-radius: 3px 3px 0 0;
 }
 
-.hoverbottom:hover{
+.hoverbottom:hover {
     border-radius: 0 0 3px 3px;
 }
 
-.submenu li{
+.submenu li {
     background-color: #d2d4d5;
 }
 
-.submenu li:first-child{
+.submenu li:first-child {
     border-radius: 3px 3px 0 0;
 }
 
-.submenu li:last-child{
+.submenu li:last-child {
     border-radius: 0 0 3px 3px;
 }
 
@@ -233,33 +254,37 @@ ul li {
     align-items: center;
 }
 
+.third_menu li {
+    position: relative;
+}
+
 .double_menu {
     position: absolute;
     border-radius: 3px;
     display: none;
     width: 421px;
-    top: calc(47.5% + 5px);
+    top: calc(100% + 5px);
     background-color: #d2d4d5;
 }
 
-.double_menu>li:first-child:hover>a{
+.double_menu>li:first-child:hover>a {
     border-radius: 3px 0 0 0;
 }
 
-.double_menu>li:nth-child(4){
+.double_menu>li:nth-child(4) {
     border-bottom: none;
 }
 
 .double_menu>li:nth-child(5),
-.double_menu>li:nth-child(6){
+.double_menu>li:nth-child(6) {
     border-right: none;
 }
 
-.double_menu>li:nth-child(5):hover>a{
+.double_menu>li:nth-child(5):hover>a {
     border-radius: 0 3px 0 0;
 }
 
-.double_menu>li:nth-child(4):hover>a{
+.double_menu>li:nth-child(4):hover>a {
     border-radius: 0 0 0 3px;
 }
 
@@ -327,6 +352,16 @@ thead {
     background-color: #2a3644;
 }
 
+thead>tr:first-child th:first-child,
+.css_table_thead p:first-child{
+    border-radius: 3px 0 0 0;
+}
+
+thead>tr:first-child th:last-child,
+.css_table_thead p:last-child{
+    border-radius: 0 3px 0 0;
+}
+
 th {
     font-size: 16px;
     color: #ffffff;
@@ -361,6 +396,16 @@ tbody tr {
     color: #2a3644;
 }
 
+tbody tr:last-child td:first-child,
+.css_table_tbody:last-child p:first-child{
+    border-radius: 0 0 0 3px;
+}
+
+tbody tr:last-child td:last-child,
+.css_table_tbody:last-child p:last-child{
+    border-radius: 0 0 3px 0;
+}
+
 .td_first_style {
     padding: 0 0 0 78px;
 
@@ -370,8 +415,11 @@ tbody tr {
     border-right: 1px solid #c0c1c2;
 }
 
-.td_third_style {
-    border-bottom: 1px solid #c0c1c2;
+.css_table_tbody:nth-child(3) p,
+.css_table_tbody:nth-child(4) p,
+.css_table_tbody:nth-child(5) p,
+.css_table_tbody:nth-child(6) p{
+    border-top: 1px solid #c0c1c2;
 }
 
 .hoverstats:hover {
@@ -401,7 +449,7 @@ footer h2 {
 
 .css_table_thead:first-child>p:nth-child(2) {
     padding: 18px 0 0 28px;
-    min-width: 375px;
+    min-width: 505px;
 }
 
 .css_table_thead:first-child>p:nth-child(3),
@@ -419,6 +467,25 @@ footer h2 {
 .css_table_tbody p,
 .css_table_thead p {
     display: table-cell;
+}
+
+.css_table_thead p+p{
+    border-left: 1px solid #3f4852;
+}
+
+.css_table_tbody p:nth-child(3),
+.css_table_tbody p:nth-child(4),
+.css_table_tbody p:nth-child(5){
+    text-align: right;
+    padding-right: 28px;
+}
+
+.css_table_tbody p+p{
+    border-left: 1px solid #c0c1c2;
+    padding-left: 25px;
+}
+
+.css_table_tbody p+p{
 }
 
 .css_table_tbody:hover {
