@@ -448,13 +448,21 @@ footer h2 {
 }
 
 .css_table_thead p{
-    padding: 14px 25px;
+    padding: 14px 22px;
     text-align: center;
+}
+
+.css_table_thead p:nth-child(3),
+.css_table_thead p:nth-child(4),
+.css_table_thead p:nth-child(5){
+    padding: 14px 48px;
+    width: 129px;
 }
 
 .css_table_thead p:nth-child(2){
     min-width: 505px;
     box-sizing: border-box;
+    text-align: left;
 }
 
 .css_table_thead,
@@ -478,26 +486,19 @@ footer h2 {
     padding-right: 28px;
 }
 
+.css_table_tbody p{
+    
+}
+
 .css_table_tbody p+p {
     border-left: 1px solid #c0c1c2;
     padding-left: 25px;
 }
-
-.css_table_tbody p+p {}
 
 .css_table_tbody:hover {
     background-color: #c0c1c2;
 }
 
 .css_table_tbody p:first-child {
-    padding: 17px 28px;
-}
-
-.td_forth_style {
-    padding-left: 25px;
-}
-
-.td_fifth_style {
-    text-align: right;
-    padding-right: 27px;
+    padding: 14px 22px;
 }
